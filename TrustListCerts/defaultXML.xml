@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:trustStatusListType xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://uri.etsi.org/02231/v2#" TSLTag="http://uri.etsi.org/19612/TSLTag">
+        <ns3:SchemeInformation>
+                <ns3:TSLType>Trust List</ns3:TSLType>
+                <ns3:SchemeOperatorName>
+                        <ns3:Name xml:lang="en">SAFE-BioPharma</ns3:Name>
+                </ns3:SchemeOperatorName>
+                <ns3:SchemeOperatorAddress>
+                        <ns3:PostalAddresses>
+                                <ns3:PostalAddress xml:lang="en">
+                                        <ns3:StreetAddress>82 N. Summit Street, Suite 2</ns3:StreetAddress>
+                                        <ns3:Locality>Tenafly</ns3:Locality>
+                                        <ns3:StateOrProvince>New Jersey</ns3:StateOrProvince>
+                                        <ns3:PostalCode>07670</ns3:PostalCode>
+                                        <ns3:CountryName>US</ns3:CountryName>
+                                </ns3:PostalAddress>
+                        </ns3:PostalAddresses>
+                        <ns3:ElectronicAddress>
+                                <ns3:URI>https://www.safe-biopharma.org/</ns3:URI>
+                        </ns3:ElectronicAddress>
+                </ns3:SchemeOperatorAddress>
+                <ns3:SchemeName/>
+                <ns3:PolicyOrLegalNotice>
+                        <ns3:TSLLegalNotice xml:lang="en">Test Trust List of Lists</ns3:TSLLegalNotice>
+                </ns3:PolicyOrLegalNotice>
+                <ns3:ListIssueDateTime>2017-01-30T03:00:00</ns3:ListIssueDateTime>
+                <ns3:NextUpdate>
+                        <ns3:dateTime>2017-07-30T01:00:00</ns3:dateTime>
+                </ns3:NextUpdate>
+                <ns3:DistributionPoints>
+                        <ns3:URI>http://some_Place_Where_This_List_Can_Be_Found.xml</ns3:URI>
+                </ns3:DistributionPoints>
+                <ns3:ExperimentalElement>You got the value!</ns3:ExperimentalElement>
+        </ns3:SchemeInformation>
+        <ns2:Signature Id="id-df4fe938bd3e81425b61c0d41ec13d79"/>
+</ns3:trustStatusListType>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="443.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zeva.tlGen.controllers.settings.TslTypeController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="423.0" minHeight="10.0" prefHeight="419.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Scheme Name" GridPane.halignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <children>
+            <Label text="Please enter The Scheme Name" />
+            <TextField fx:id="field" prefHeight="25.0" prefWidth="349.0" promptText="Scheme Name" />
+            <Label text="Select Language" />
+            <ComboBox fx:id="lang" prefHeight="25.0" prefWidth="172.0" promptText="Language" />
+         </children>
+         <GridPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </GridPane.margin>
+      </VBox>
+   </children>
+</GridPane>

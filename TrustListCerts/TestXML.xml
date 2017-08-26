@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TrustServiceStatusList>
+        <TestMe>Things</TestMe>
+        <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:SignedInfo>
+                        <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                        <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                        <ds:Reference Id="" Type="" URI="">
+                                <ds:Transforms>
+                                        <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                                        <ds:Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">
+                                                <ds:XPath>translate(*, '&amp;#xA;&amp;#9;&amp;#10;&amp;#13;&amp;#xD;&amp;#160; &amp;#x85;&amp;#x2028;0x0A ', '') and not(ancestor-or-self::ds:Signature)</ds:XPath>
+                                        </ds:Transform>
+                                        <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                                </ds:Transforms>
+                                <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                                <ds:DigestValue>ZjiS8ZBCFgjUpwrhV/6AO1COJZgN+Mtc5SvtpS2eyV0=</ds:DigestValue>
+                        </ds:Reference>
+                </ds:SignedInfo>
+                <ds:SignatureValue>IpPBSfjaZ9AQAbJtzQc8NblMlubPWbx4zsgEW35P4i9Ee2/oKJLjN3bPts3hb1r+ormoR8Ct+LOkeHiYIH6kIdUQ46WEcn7vs6EDg2fyhMFad0/Wah5Wg82aNPT7PtE9+Nb+Ktf246ae/8tePg05a+XduDTzSfUSg7m/hyqlLvdmWofrjUfOa+t+uQJlDsFrJnHZtv+okdoBAD+udqVWjh1bVPiwghNy7z9N0yhLYCo4zMw9W2rvWNuipQwMdCZ3vdxCAyLjbb+QhILewbIRs+hElvngxfmRlD0FplbvuOBbhwcWbqNIWoDCaC6CPpRednk6d119IRW2PPCwUAmL8g==</ds:SignatureValue>
+                <ds:KeyInfo>
+                        <ds:X509Data>
+                                <ds:X509SubjectName>CN=Trans Sped SAFE CA III</ds:X509SubjectName>
+                                <ds:X509Certificate>MIICtjCCAZ6gAwIBAgIBATANBgkqhkiG9w0BAQUFADAcMRowGAYDVQQDDBFTQUZFIEJyaWRnZSBDQSAwMjAeFw0xNzAyMDIyMzI4NDRaFw0xNzAyMDIyMzI4NDRaMCExHzAdBgNVBAMMFlRyYW5zIFNwZWQgU0FGRSBDQSBJSUkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCjhLRV6OJpgLnEVuf3Iy3S86ofP1Y1A2G2bHbF1SQNW9GwXonmkfUGKuXooyvEWstbThflRQLDK+X/iyizx7+GNGwB55smPZTcioVF1omjjX+krTqmuOFrCqB2ZFbNe7GEfFc9O5KHk/VaFSqs89YJsZGDBIH6/vAf5ZgGPQoqbBt7uNtQa66QWRdHCqcHRHFfHykdxHJT/fmtmmmKecCZkJiRdV9JAj6K3kV3bgWBQhcVb0wQ+wblSCgm9O4kpaGAFgCJ6SJ4RsHBuI1EtBB8kASDMMJY9d/cEAu1TrKdV0me8aM5snnZzb1zqJKYkTdAwRd72dXPwsOO8s4WiydpAgMBAAEwDQYJKoZIhvcNAQEFBQADggEBAA7dFKC6rCor2LKKXm3ElFhtEr1dxE3RYXS53TEzyhoOj/tKprV0rupfCluyGPPbKTqR1AsqPpIi8pzp45KXnosnr0r6aDjlv66+eXglK5BuM5ElTBcC8t4fMPkWQ6Ydou/6hVug+0GA5/GZCMzrKnLQZDVqlJLmDm+b7nT+Nse1/qnJ3i9fu8Ku4NtvGPIFJVDZNGar/cqu6Zv0rTuEh83qFrhFb+HgN+rHHSjmB4frUVL0vip300dMDFgZaVX2MuxxCOpWjcaMry0YGt4rEVSXqDx7yR7MjHbR7vye7b4MCT9hI4/gpj89FIbhJScA7fLlR5WoIpYhMGzxiHUE2mw=</ds:X509Certificate>
+                        </ds:X509Data>
+                </ds:KeyInfo>
+        </ds:Signature>
+</TrustServiceStatusList>

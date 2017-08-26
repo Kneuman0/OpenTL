@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Built-By: karottop
+Class-Path: commons-codec-1.10-javadoc.jar commons-codec-1.10.jar bcpr
+ ov-jdk15on-1.47-sources.jar bcprov-ext-jdk14-1.47.jar xades4j-1.3.2.j
+ ar guice-multibindings-2.0.jar guice-2.0.jar aopalliance-1.0.jar xmls
+ ec-2.0.1.jar slf4j-api-1.7.7.jar woodstox-core-asl-4.4.0.jar stax2-ap
+ i-3.1.4.jar bcpkix-jdk15on-1.50.jar bcprov-jdk15on-1.50.jar log4j-1.2
+ .16.jar TrustListDataModelLib-0.0.1-SNAPSHOT.jar jaxb-api-2.2.1.jar s
+ tax-api-1.0-2.jar activation-1.1.jar XMLSigningLib-0.0.1-SNAPSHOT.jar
+  xercesImpl-2.9.0.jar xml-apis-1.3.04.jar commons-io-1.3.2.jar GUIUti
+ ls-0.0.1-SNAPSHOT.jar TrustLib-0.0.1-SNAPSHOT.jar SettingsMenu-0.0.1-
+ SNAPSHOT.jar tornadofx-controls-1.0.3.jar
+Build-Jdk: 1.8.0_131
+Created-By: Maven Integration for Eclipse
+Main-Class: com.zeva.tlGen.mainApp.TLGenMain
+

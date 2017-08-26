@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zeva.tlGen.mainApp.TLGenController">
+  <tabs>
+      <Tab text="Build Trust List">
+         <content>
+            <GridPane fx:id="tlGridPane">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="85.0" prefWidth="600.0" GridPane.halignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.0" minWidth="10.0" prefWidth="346.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="94.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="340.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Uploaded Certificates" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <effect>
+                              <DropShadow color="WHITE" spread="0.52" />
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Button mnemonicParsing="false" onAction="#onExportTl" text="Export Certificates to Trust List" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <tooltip>
+                              <Tooltip text="Exports Trust List based on default values found File &gt; settings" />
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#importCertificatesButtonListener" text="Upload Certificates" GridPane.rowIndex="1">
+                           <tooltip>
+                              <Tooltip height="50.0" text="Click to upload .pem files and .cer files. Multiple file selection is supported!" width="50.0" wrapText="true" />
+                           </tooltip></Button>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="5.0" prefWidth="34.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="274.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <MenuBar prefHeight="25.0" prefWidth="56.0">
+                                <menus>
+                                  <Menu mnemonicParsing="false" text="File">
+                                    <items>
+                                      <MenuItem fx:id="settingMenu" mnemonicParsing="false" onAction="#onSettingMenuSelected" text="Settings" />
+                                          <MenuItem fx:id="preferencesMenu" disable="true" mnemonicParsing="false" text="Preferences" />
+                                    </items>
+                                  </Menu>
+                                </menus>
+                              </MenuBar>
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="2">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="220.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="120.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <MenuBar GridPane.columnIndex="1">
+                                <menus>
+                                  <Menu mnemonicParsing="false" text="Import">
+                                    <items>
+                                      <MenuItem mnemonicParsing="false" onAction="#importTrustListListener" text="Import Trust List" />
+                                    </items>
+                                  </Menu>
+                                  <Menu mnemonicParsing="false" text="Export">
+                                    <items>
+                                      <MenuItem mnemonicParsing="false" onAction="#exportCertsToPemListener" text="Export Certs to .pem File" />
+                                          <MenuItem disable="true" mnemonicParsing="false" text="Export Edititable Trust List" />
+                                    </items>
+                                  </Menu>
+                                </menus>
+                              </MenuBar>
+                           </children>
+                        </GridPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="Trust List">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="WHITE" spread="0.53" />
+                                 </effect>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                  </GridPane>
+                  <GridPane GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox prefHeight="294.0" prefWidth="593.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <children>
+                              <TreeTableView fx:id="uploadedCertsTree" onKeyPressed="#onDeleteCerts" onMouseClicked="#onSelectionChange" prefHeight="308.0" prefWidth="353.0">
+                                <columns>
+                                  <TreeTableColumn fx:id="uploadedCertsTreeCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="345.0" text="Certificates" />
+                                </columns>
+                              </TreeTableView>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <BorderPane prefHeight="313.0" prefWidth="100.0">
+                                       <center>
+                                          <Button fx:id="addCertButton" mnemonicParsing="false" onAction="#addCertsToTrustListButton" text="Add--&gt;" BorderPane.alignment="CENTER">
+                                             <tooltip>
+                                                <Tooltip text="Add certificates to Trust List" />
+                                             </tooltip></Button>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <TreeTableView fx:id="tlCertsTree" onKeyPressed="#onDeleteCerts" onMouseClicked="#onSelectionChange" prefHeight="308.0" prefWidth="349.0">
+                                <columns>
+                                  <TreeTableColumn fx:id="tlCertsTreeCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="341.0" text="Certificates" />
+                                </columns>
+                              </TreeTableView>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </HBox>
+                     </children>
+                  </GridPane>
+                  <VBox prefHeight="138.0" prefWidth="605.0" GridPane.rowIndex="2">
+                     <children>
+                        <GridPane prefHeight="22.0" prefWidth="600.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Certificate Information" GridPane.halignment="CENTER">
+                                 <effect>
+                                    <DropShadow color="WHITE" spread="0.59" />
+                                 </effect>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <TextArea fx:id="textArea" prefHeight="115.0" prefWidth="589.0" promptText="No certificates selected" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="4.0" />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="346.0" minHeight="10.0" prefHeight="307.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="207.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </Tab>
+    <Tab text="Build List of Lists">
+         <content>
+            <GridPane fx:id="listOfListGridPane">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="346.0" minHeight="10.0" prefHeight="307.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="207.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox prefHeight="294.0" prefWidth="593.0">
+                           <children>
+                              <TreeTableView fx:id="trustLists" onKeyPressed="#onDeleteCerts" onMouseClicked="#onSelectionChange" prefHeight="308.0" prefWidth="353.0">
+                                 <columns>
+                                    <TreeTableColumn fx:id="trustListsCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="352.0" text="Trust Lists" />
+                                 </columns>
+                              </TreeTableView>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <BorderPane prefHeight="313.0" prefWidth="100.0">
+                                       <center>
+                                          <Button fx:id="addCertButton1" mnemonicParsing="false" onAction="#onAddButtonForTrustListOfLists" text="Add--&gt;" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <TreeTableView fx:id="listOfLists" onKeyPressed="#onDeleteCerts" onMouseClicked="#onSelectionChange" prefHeight="308.0" prefWidth="349.0">
+                                 <columns>
+                                    <TreeTableColumn fx:id="listOfListsCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="341.0" text="Trust Lists" />
+                                 </columns>
+                              </TreeTableView>
+                           </children>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </HBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane prefHeight="86.0" prefWidth="801.0">
+                     <children>
+                        <Label text="Uploaded Trust Lists" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <effect>
+                              <DropShadow color="WHITE" spread="0.52" />
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#exportTrustListofLists" text="Export Pointers to Trust List of Lists" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onAddPointer" text="Add Pointer" GridPane.rowIndex="1">
+                           <tooltip>
+                              <Tooltip height="50.0" text="Click to upload .pem files and .cer files. Multiple file selection is supported!" width="50.0" wrapText="true" />
+                           </tooltip>
+                        </Button>
+                        <GridPane>
+                           <children>
+                              <MenuBar prefHeight="25.0" prefWidth="99.0">
+                                 <menus>
+                                    <Menu mnemonicParsing="false" text="File">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#onSettingMenuSelected" text="Settings" />
+                                          <MenuItem disable="true" mnemonicParsing="false" text="Preferences" />
+                                       </items>
+                                    </Menu>
+                                 </menus>
+                              </MenuBar>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="3.0" prefWidth="37.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="271.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="2">
+                           <children>
+                              <MenuBar GridPane.columnIndex="2">
+                                 <menus>
+                                    <Menu mnemonicParsing="false" text="Export" />
+                                 </menus>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </MenuBar>
+                              <MenuBar prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <menus>
+                                    <Menu mnemonicParsing="false" text="Import" />
+                                 </menus>
+                              </MenuBar>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="205.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="66.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="65.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="Trust List of Lists">
+                                 <effect>
+                                    <DropShadow color="WHITE" spread="0.52" />
+                                 </effect>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.0" minWidth="10.0" prefWidth="345.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="340.0" />
+                     </columnConstraints>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                  </GridPane>
+                  <VBox prefHeight="132.0" prefWidth="600.0" GridPane.rowIndex="2">
+                     <children>
+                        <GridPane prefHeight="22.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Certificate Information" GridPane.halignment="CENTER">
+                                 <effect>
+                                    <DropShadow color="WHITE" spread="0.59" />
+                                 </effect>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <TextArea fx:id="textArea1" prefHeight="116.0" prefWidth="593.0" promptText="No certificates selected" wrapText="true">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                     <opaqueInsets>
+                        <Insets left="4.0" />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </GridPane>
+         </content></Tab>
+  </tabs>
+</TabPane>
